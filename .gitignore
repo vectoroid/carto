@@ -8,6 +8,9 @@ _old/*
 .deta*
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 044c7da (Updated gitignore file with merged-in Python gitignore template from Github.)
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -129,15 +132,3 @@ venv.bak/
 # mkdocs documentation
 /site
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-=======
-# Ignore Python stuff
-*.pyc
-.venv
->>>>>>> 3a1de94 (Initial commit)
