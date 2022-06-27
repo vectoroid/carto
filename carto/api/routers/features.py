@@ -55,11 +55,16 @@ features = fastapi.APIRouter(**router_config)
 async def get_root():
     logger.info("Retrieving list of Carto Features currently saved to DB.")
     feature_list = await Feature.fetch()
+    if len(feature_list) < 1:
+        raise NotFoundHTTPException
     return feature_list
     
 @features.get("/features")
 async def list_features():
-    return await Feature.fetch()
+    features = await Feature.fetch()
+    if len(features) < 1:
+        raise NotFoundHTTPException
+    return features
 
 @features.get("/features/{feature_id}", response_model=Feature)
 async def find_feature(feature_id: typing.Union[UUID, str]):
