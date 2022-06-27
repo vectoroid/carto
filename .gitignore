@@ -1,3 +1,12 @@
+# old stuff
+_old/*
+
+# Ignore Environment Variables
+.env
+
+# Ignore Deta.sh internal stuff
+.deta*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,7 +111,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
