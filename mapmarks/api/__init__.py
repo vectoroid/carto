@@ -1,7 +1,11 @@
 """
-MapMarkr app - save your place in life
+Carto app - save your place in life
 """
+import logging
+# init logging
+logger = logging.getLogger(__name__)
 
+# app version
 __version__ = "0.0.1"
 
 # import app modules

@@ -1,8 +1,12 @@
 """
+Exceptions which are specific to this particular application
 """
+import logging
 from typing import Any, Optional, Dict, List
 from fastapi import HTTPException, status
 
+# init logger
+logger = logging.getLogger(__name__)
 
 class BadRequestHTTPException(HTTPException):
     """

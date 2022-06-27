@@ -33,10 +33,8 @@ class APIRouter(routing.Router):
 """
 import fastapi
 import logging
-
-
 # Configure and crank up the Logger
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
 # Define Feature Router
 router_config = {

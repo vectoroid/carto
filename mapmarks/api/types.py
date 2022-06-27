@@ -1,6 +1,9 @@
 import enum
+import logging
 import typing
 
+# init logging
+logger = logging.getLogger(__name__)
 
 # App-specific types
 GeolocationCategory = typing.Literal["Reefer", "Tobacco", "Other"]

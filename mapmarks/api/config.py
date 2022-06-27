@@ -6,15 +6,15 @@ This file contains application-wide settings -- e.g. database name, etc.
    settings mapanagement for MapMarkr.
 """
 import logging
-import os
+# init logger
+logger = logging.getLogger(__name__)
 
+# stdlib imports
+import os
 from enum import Enum
 from functools import lru_cache
 from pydantic import BaseSettings, Field
 
-
-# init logger
-logger = logging.getLogger(__name__)
 
 # MapMarkr Operating Environment status
 class OpEnviron(Enum):

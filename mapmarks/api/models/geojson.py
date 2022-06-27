@@ -3,10 +3,12 @@ GeoJSON models
 
 -  defined IAC with the [GeoJSON specification: RFC 7946](https://tools.ietf.org/html/rfc7946)
 """
+import logging
+# init logger
+logger = logging.getLogger(__name__)
 
-
+# std lib
 from datetime import datetime
-
 from pydantic import BaseModel
 from pydantic import Field
 from pydantic import validator
@@ -15,7 +17,7 @@ from typing import Optional
 from typing import NamedTuple
 from typing import Union
 from uuid import UUID, uuid4
-
+# app
 from mapmarks.api.config import AppSettings
 from mapmarks.api.models.base import DetaBase, async_db_client
 from mapmarks.api.types import GeojsonType

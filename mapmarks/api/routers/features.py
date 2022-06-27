@@ -33,8 +33,6 @@ class APIRouter(routing.Router):
 """
 import fastapi
 import logging
-
-
 # Configure and crank up the Logger
 logger = logging.getLogger(__name__)
 

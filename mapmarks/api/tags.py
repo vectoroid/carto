@@ -1,7 +1,11 @@
 """
+@NOTE: this file should be deleted.
 """
+import logging
 from enum import Enum
 
+# init logger
+logger = logging.getLogger(__name__)
 
 class Tag(str, Enum):
     """
