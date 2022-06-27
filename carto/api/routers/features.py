@@ -34,6 +34,7 @@ class APIRouter(routing.Router):
 import fastapi
 import logging
 import typing
+from uuid import UUID
 
 from carto.api.exceptions import NotFoundHTTPException
 # Configure and crank up the Logger
