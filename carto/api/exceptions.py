@@ -8,6 +8,7 @@ from fastapi import HTTPException, status
 # init logger
 logger = logging.getLogger(__name__)
 
+# http error 400 (bad request)
 class BadRequestHTTPException(HTTPException):
     """
     class NotFoundHTTPException(fastapi.HTTPException)
@@ -18,6 +19,7 @@ class BadRequestHTTPException(HTTPException):
     def __init__(self, message: Optional[str]="Request was badly formed. Please resend.") -> None:
         super().__init__(status_code=status.HTTP_400_BAD_REQUEST, detail=message)
 
+# http error 403 (forbidden)
 class ForbiddenAccessHTTPException(HTTPException):
     """
     class ForbiddenAccessHTTPException(fastapi.HTTPException)
@@ -29,6 +31,7 @@ class ForbiddenAccessHTTPException(HTTPException):
         super().__init__(status_code=status.HTTP_403_FORBIDDEN, detail=message)
         
 
+# http error 404 (resource not found)
 class NotFoundHTTPException(HTTPException):
     """
     class NotFoundHTTPException(fastapi.HTTPException)
