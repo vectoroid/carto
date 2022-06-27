@@ -33,6 +33,9 @@ class APIRouter(routing.Router):
 """
 import fastapi
 import logging
+import typing
+
+from carto.api.exceptions import NotFoundHTTPException
 # Configure and crank up the Logger
 logger = logging.getLogger(__name__)
 
@@ -80,6 +83,11 @@ async def update_feature(feature_id: int, payload: Feature):
     
     old_feature.update(**payload.dict())
     
-@features.delete("/features{feature_id}/delete")
+@features.delete("/features/{feature_id}/delete")
 async def delete_feature(feature_id: int) -> None:
-    return await Feature.delete()
+    doomed_feature = await Feature.find(feature_id)
+    
+    if doomed_feature is None:
+        raise NotFoundHTTPException
+    
+    return await doomed_feature.delete()
