@@ -18,11 +18,11 @@ from typing import NamedTuple
 from typing import Union
 from uuid import UUID, uuid4
 # app
-from mapmarks.api.config import AppSettings
-from mapmarks.api.models.base import DetaBase, async_db_client
-from mapmarks.api.types import GeojsonType
-from mapmarks.api.types import GeolocationCategory
-from mapmarks.api.types import Lon, Lat
+from carto.api.config import AppSettings
+from carto.api.models.base import DetaBase, async_db_client
+from carto.api.types import GeojsonType
+from carto.api.types import GeolocationCategory
+from carto.api.types import Lon, Lat
 
 # init 
 settings = AppSettings()

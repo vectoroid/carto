@@ -1,5 +1,5 @@
 """
-MapMarkr :: I/O Schema
+Carto :: I/O Schema
 - these schema are pydantic models (classes) which represent the application's
   I/O -- user input and app output, in the form of HTTPResponses, defined by 
   classes in FastAPI, or--more probably--Starlette.
@@ -16,8 +16,8 @@ from pydantic import Field
 from pydantic import BaseModel
 from pydantic import ValidationError
 
-from mapmarks.api.config import AppSettings
-from mapmarks.api.exceptions import NotFoundHTTPException
+from carto.api.config import AppSettings
+from carto.api.exceptions import NotFoundHTTPException
 
 # init logging
 logger = logging.getLogger(__name__)
@@ -45,8 +45,8 @@ async def async_db_client(db_name: str=settings.db_name):
 # -  simplest method to apply universal config options to all models
 class DetaBase(BaseModel):
     """
-    class: mapmarks.api.models.DetaBase
-    module: mapmarks.api.models
+    class: carto.api.models.DetaBase
+    module: carto.api.models
     
     note: Didn't realize I'd have a reason to create an intermediary class, between pydantic.BaseModel and
           my actual I/O models, so by renaming (effectively) pydantic.BaseModel to pydantic.PydanticBase, 
@@ -60,7 +60,7 @@ class DetaBase(BaseModel):
     db_name: ClassVar = Field(settings.db_name)
     
     class Config:
-        """class mapmarks.api.models.base.DetaBase.Config
+        """class carto.api.models.base.DetaBase.Config
         """
         anystr_strip_whitespace: bool = True    # always strip whitespace from user-input strings
         extra: str = Extra.forbid

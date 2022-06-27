@@ -9,9 +9,9 @@ logger = logging.getLogger(__name__)
 __version__ = "0.0.1"
 
 # import app modules
-from mapmarks.api.config import AppSettings
-from mapmarks.api.types import Lon, Lat
-from mapmarks.api.models.geojson import Point
-from mapmarks.api.models.geojson import Props
-from mapmarks.api.models.geojson import Feature
-from mapmarks.api.models.geojson import FeatureCollection
+from carto.api.config import AppSettings
+from carto.api.types import Lon, Lat
+from carto.api.models.geojson import Point
+from carto.api.models.geojson import Props
+from carto.api.models.geojson import Feature
+from carto.api.models.geojson import FeatureCollection

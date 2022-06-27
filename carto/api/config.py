@@ -1,9 +1,9 @@
 """
-MapMarkr -- Configuration
+Carto -- Configuration
 
 This file contains application-wide settings -- e.g. database name, etc.
 -  uses Pydantic's BaseSettings class to incorporate sophisticated 
-   settings mapanagement for MapMarkr.
+   settings mapanagement for Carto.
 """
 import logging
 # init logger
@@ -16,7 +16,7 @@ from functools import lru_cache
 from pydantic import BaseSettings, Field
 
 
-# MapMarkr Operating Environment status
+# Carto Operating Environment status
 class OpEnviron(Enum):
     """class OperationEnvion
        - This class represents the App's operating environment: i.e. 'dev', 'staging' or 'production'.
@@ -28,14 +28,14 @@ class OpEnviron(Enum):
     production = 'production'
     
 
-# MapMarkr settings-management class
+# Carto settings-management class
 class AppSettings(BaseSettings):
     """
     Global app configuration/settings
     """
     # FastAPI config options
     root_path: str = "/api/v1"
-    title: str = "MapMarkr"
+    title: str = "Carto"
     description: str = "Save your favorite places"
     version: str = "0.0.1"
     debug_mode: bool = True
