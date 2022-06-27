@@ -36,7 +36,7 @@ class AppSettings(BaseSettings):
     # FastAPI config options
     root_path: str = "/api/v1"
     title: str = "Carto"
-    description: str = "Save your favorite places"
+    description: str = "Chart your favorite places"
     version: str = "0.0.1"
     debug_mode: bool = True
     
