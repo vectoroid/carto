@@ -13,13 +13,12 @@ from fastapi import Depends, FastAPI
 from mapmarks.api.config import get_app_config
 from mapmarks.api.tags import Tag
 from mapmarks.api.models.geojson import Feature
-from mapmarks.logger import get_logger
 from mapmarks.api.exceptions import NotFoundHTTPException
 from mapmarks.api.routers import features as FeaturesRouter
 from mapmarks.api.routers import tags as TagsRouter
 
 # Configure and crank up the Logger
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
 # Set application configuration
 settings = get_app_config()

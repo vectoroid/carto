@@ -19,8 +19,10 @@ from pydantic import ValidationError
 from mapmarks.api.config import AppSettings
 from mapmarks.api.exceptions import NotFoundHTTPException
 
+# init logging
+logger = logging.getLogger(__name__)
 
-# init
+# init Deta SDK client
 from deta import Deta
 deta = Deta()
 

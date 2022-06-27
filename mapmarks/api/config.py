@@ -13,6 +13,9 @@ from functools import lru_cache
 from pydantic import BaseSettings, Field
 
 
+# init logger
+logger = logging.getLogger(__name__)
+
 # MapMarkr Operating Environment status
 class OpEnviron(Enum):
     """class OperationEnvion
@@ -50,10 +53,11 @@ class AppSettings(BaseSettings):
             self.__class__.set_level()
         
         @classmethod
-        def set_level(cls):
+        def set_level(cls) -> None:
             """Sets `logging.LEVEL` to the value of cls.debug_mode. Hopefully, this will be helpful if/when I deploy after forgetting to set an appropriate logging severity level."""
             c = get_app_config()
-            return (cls.level := c.debug_mode)
+            # sync logging.level with app DEBUG_MODE value
+            cls.level = c.debug_mode
                 
     # Meta config options
     class Config:

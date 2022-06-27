@@ -36,7 +36,7 @@ import logging
 
 
 # Configure and crank up the Logger
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
 # Define Feature Router
 router_config = {
@@ -49,7 +49,6 @@ features = fastapi.APIRouter(**router_config)
 # Feature Routing
 @features.get("/", response_model=list[Feature])
 async def get_root():
-    logger.info(f"Got a Request for this `APIRouter()'s` index route: /{}")
     logger.info("Retrieving list of MapMarkr Features currently saved to DB.")
     feature_list = await Feature.fetch()
     return feature_list
